@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container" style="background-color: white">
 <p>
   <strong>Name:</strong>
   <%= @theatre.name %>
@@ -15,6 +15,32 @@
   <%= @theatre.address %>
 </p>
 
+<% if @shows.blank? %>
+  <h3>No reviews just yet, would you like to add the first!</h3>
+<% else %>
+    <table class="table-striped table">
+      <thead>
+      <tr>
+        <th>Movie</th>
+        <th>Show Time</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @shows.each do |show| %>
+        <tr>
+          <td><%= @all_movies.select {|x| x[0]==show.movie_id}.first[1] %></td>
+          <td><%= show.start %></td>
+        </tr>
+
+      <% end %>
+      </tbody>
+    </table>
+<% end %>
+
+
 <%= link_to "Add a Show", new_theatre_show_path(@theatre) %>
 <%= link_to 'Edit', edit_theatre_path(@theatre) %> |
 <%= link_to 'Back', theatres_path %>
+</div>
+

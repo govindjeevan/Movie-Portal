@@ -26,15 +26,14 @@ class ShowsController < ApplicationController
   # POST /shows.json
   def create
     @show = Show.new(show_params)
-    @show.theatre = @theatre.id
-    respond_to do |format|
+    @show.theatre_id = @theatre.id
+    @show.movie_id = params[:movie_select]
       if @show.save
         redirect_to @theatre
       else
         format.html {render :new}
         format.json {render json: @show.errors, status: :unprocessable_entity}
       end
-    end
   end
 
   # PATCH/PUT /shows/1

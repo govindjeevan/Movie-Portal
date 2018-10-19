@@ -17,6 +17,12 @@
   </div>
 
   <div class="field">
+    <% @movies=Movie.all%>
+    <%= select_tag "movie_select", options_from_collection_for_select(@movies, "id", "title")%>
+  </div>
+
+
+  <div class="field">
     <%= form.label :end %>
     <%= form.datetime_select :end %>
   </div>

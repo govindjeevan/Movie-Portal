@@ -10,6 +10,7 @@ class TheatresController < ApplicationController
   # GET /theatres/1
   # GET /theatres/1.json
   def show
+    @shows = Show.where(theatre_id: @theatre.id).order("created_at DESC")
   end
 
   # GET /theatres/new
@@ -65,9 +66,13 @@ class TheatresController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_theatre
       @theatre = Theatre.find(params[:id])
+      @all_movies_ids = Show.where(:theatre_id=>@theatre.id).pluck(:movie_id)
+      @all_movies = Movie.where(:id => @all_movies_ids).pluck(:id,:title)
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+
+
+  # Never trust parameters from the scary internet, only allow the white list through.
     def theatre_params
       params.require(:theatre).permit(:name, :capacity, :address)
     end
