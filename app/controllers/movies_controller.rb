@@ -11,13 +11,15 @@ class MoviesController < ApplicationController
   # GET /movies/1
   # GET /movies/1.json
   def show
-    @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
+    @reviews = Review.where(:movie_id=> @movie.id).order("created_at DESC")
+    @shows= Show.where(:movie_id=> @movie.id)
+    @all_theatre_ids=@shows.pluck(:theatre_id)
+    @all_theatres=Theatre.where(:id=>@all_theatre_ids).pluck(:id,:name)
   end
 
   # GET /movies/new
   def new
-
-    @movie = current_user.movies.build
+s    @movie = current_user.movies.build
   end
 
   # GET /movies/1/edit

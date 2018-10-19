@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container">
+
 <h1>Theatres</h1>
 
-<table>
+
+<table  class="table-striped table">
   <thead>
     <tr>
       <th>Name</th>
       <th>Capacity</th>
       <th>Address</th>
-      <th colspan="3"></th>
+      <th> Actions</th>
     </tr>
   </thead>
 
@@ -18,9 +21,7 @@
         <td><%= theatre.name %></td>
         <td><%= theatre.capacity %></td>
         <td><%= theatre.address %></td>
-        <td><%= link_to 'Show', theatre %></td>
-        <td><%= link_to 'Edit', edit_theatre_path(theatre) %></td>
-        <td><%= link_to 'Destroy', theatre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', theatre %><%= link_to 'Edit', edit_theatre_path(theatre) %><%= link_to 'Destroy', theatre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,3 +30,4 @@
 <br>
 
 <%= link_to 'New Theatre', new_theatre_path %>
+</div>
