@@ -1,29 +1,36 @@
+
+<div class="container1 container">
+
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Movie:</strong>
-  <%= @booking.movie_id %>
+  <%= @booking.movie_name %>
 </p>
 
 <p>
   <strong>Theatre:</strong>
-  <%= @booking.theatre_id %>
+  <%= @booking.theatre_name %>
 </p>
+
+<p>
+  <strong>No. Of Seats:</strong>
+  <%= @booking.seats %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @booking.start_time %>
+</p>
+
 
 <p>
   <strong>User:</strong>
   <%= @booking.user_id %>
 </p>
 
-<p>
-  <strong>Show:</strong>
-  <%= @booking.show_id %>
-</p>
 
-<p>
-  <strong>Seats:</strong>
-  <%= @booking.seats %>
-</p>
 
 <%= link_to 'Edit', edit_booking_path(@booking) %> |
 <%= link_to 'Back', bookings_path %>
+</div>

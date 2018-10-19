@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :bookings
-  resources :shows
+  resources :shows do
+    resources :bookings
+  end
   resources :theatres do
     resources :shows
   end
