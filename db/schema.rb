@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_19_121450) do
+ActiveRecord::Schema.define(version: 2018_10_19_145831) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 2018_10_19_121450) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "movie_id"
+    t.integer "theatre_id"
+    t.integer "user_id"
+    t.integer "show_id"
+    t.integer "seats"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "movies", force: :cascade do |t|
@@ -55,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_10_19_121450) do
     t.datetime "updated_at", null: false
     t.integer "theatre_id"
     t.integer "movie_id"
+    t.integer "seats"
   end
 
   create_table "theatres", force: :cascade do |t|

@@ -28,12 +28,37 @@
             </tr>
             </tbody>
           </table>
-          <%= link_to "Write a Review", new_movie_review_path(@movie) %>
         </div>
       </div>
       <div class="col-md-7 col-md-offset-1">
-        <h1 class="review_title"><%= @movie.title %></h1>
-        <p><%= @movie.description %></p>
+
+        <% if @shows.blank? %>
+        <% else %>
+          <table class="table-striped table">
+            <thead>
+            <tr>
+              <th>Theatre</th>
+              <th>Show Time</th>
+              <th>Seats left</th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+            <% @shows.each do |show| %>
+              <tr>
+                <td><%= @all_theatres.select {|x| x[0]==show.theatre_id}.first[1] %></td>
+                <td><%= show.start %></td>
+                <td><%= show.seats %></td>
+              </tr>
+
+            <% end %>
+            </tbody>
+          </table>
+        <% end %>
+
+
+
 
         <% if @reviews.blank? %>
           <h3>No reviews just yet, would you like to add the first!</h3>
@@ -45,34 +70,14 @@
               <p><%= review.comment %></p>
             </div>
           <% end %>
-        <% end %>
+          <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
+
+      <% end %>
       </div>
 
 
 
-      <% if @shows.blank? %>
-        <h3>No reviews just yet, would you like to add the first!</h3>
-      <% else %>
-        <table class="table-striped table">
-          <thead>
-          <tr>
-            <th>Theatre</th>
-            <th>Show Time</th>
-          </tr>
-          </thead>
 
-          <tbody>
-          <% @shows.each do |show| %>
-            <tr>
-              <td><%= @all_theatres.select {|x| x[0]==show.theatre_id}.first[1] %></td>
-              <td><%= show.start %></td>
-              <td><%= show.start %></td>
-            </tr>
-
-          <% end %>
-          </tbody>
-        </table>
-      <% end %>
 
 
 

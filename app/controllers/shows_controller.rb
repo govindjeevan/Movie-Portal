@@ -1,6 +1,7 @@
 class ShowsController < ApplicationController
   before_action :set_show, only: [:show, :edit, :update, :destroy]
   before_action :set_theatre
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /shows
   # GET /shows.json
@@ -27,6 +28,7 @@ class ShowsController < ApplicationController
   def create
     @show = Show.new(show_params)
     @show.theatre_id = @theatre.id
+    @show.seats = @theatre.capacity
     @show.movie_id = params[:movie_select]
       if @show.save
         redirect_to @theatre

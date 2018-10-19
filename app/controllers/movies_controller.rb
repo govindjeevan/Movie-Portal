@@ -19,7 +19,7 @@ class MoviesController < ApplicationController
 
   # GET /movies/new
   def new
-s    @movie = current_user.movies.build
+    @movie = current_user.movies.build
   end
 
   # GET /movies/1/edit
