@@ -16,7 +16,9 @@
         <% if user_signed_in? %>
           <% if current_user.try(:admin?) %>
             <li><%= link_to "New Movie", new_movie_path, class: "active" %></li>
-          <%end%>
+            <li><%= link_to "New Theatre", new_theatre_path, class: "active" %></li>
+
+      <%end%>
           <li><%= link_to "Account", edit_user_registration_path %></li>
           <li>
             <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
@@ -25,6 +27,8 @@
           <li><%= link_to "Sign Up", new_user_registration_path, class: "active" %></li>
           <li><%= link_to "Sign In", new_user_session_path, class: "active" %></li>
         <% end %>
+        <li><%= link_to "Theatres", theatres_path, class: "active" %></li>
+
       </ul>
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">

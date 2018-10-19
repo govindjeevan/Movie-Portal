@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @theatre.name %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @theatre.capacity %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @theatre.address %>
+</p>
+
+<%= link_to "Add a Show", new_theatre_show_path(@theatre) %>
+<%= link_to 'Edit', edit_theatre_path(@theatre) %> |
+<%= link_to 'Back', theatres_path %>
