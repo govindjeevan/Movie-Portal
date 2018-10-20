@@ -11,7 +11,9 @@
       <th>Name</th>
       <th>Capacity</th>
       <th>Address</th>
+      <% if current_user.try(:admin?) %>
       <th> Actions</th>
+      <% end %>
     </tr>
   </thead>
 
@@ -21,13 +23,16 @@
         <td><%= theatre.name %></td>
         <td><%= theatre.capacity %></td>
         <td><%= theatre.address %></td>
+        <% if current_user.try(:admin?) %>
         <td><%= link_to 'Show', theatre %><%= link_to 'Edit', edit_theatre_path(theatre) %><%= link_to 'Destroy', theatre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if current_user.try(:admin?) %>
 <%= link_to 'New Theatre', new_theatre_path %>
+<% end %>
 </div>
