@@ -33,6 +33,6 @@
 
 <br>
 <% if current_user.try(:admin?) %>
-<%= link_to 'New Theatre', new_theatre_path %>
+<%= link_to "New Theatre".html_safe, new_theatre_path, :class => "btn btn3d btn-info " %>
 <% end %>
 </div>

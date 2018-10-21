@@ -12,21 +12,34 @@
   <% end %>
 
   <div class="field">
+    <div class="row">
+    <div class="form-group col-lg-6">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name  , class: 'form-control color'%>
+  </div>
+  </div>
   </div>
 
   <div class="field">
+    <div class="row">
+    <div class="form-group col-lg-6">
     <%= form.label :capacity %>
-    <%= form.number_field :capacity %>
+    <%= form.number_field :capacity, class: 'form-control color' %>
+  </div>
+  </div>
   </div>
 
   <div class="field">
+    <div class="row">
+    <div class="form-group col-lg-6">
     <%= form.label :address %>
-    <%= form.text_area :address %>
+    <%= form.text_area :address, class: 'form-control color' %>
+  </div>
+  </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+       <%= form.submit  class:"btn btn-success btn-lg btn3d" %>
   </div>
+
 <% end %>
