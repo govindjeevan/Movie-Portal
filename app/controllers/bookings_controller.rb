@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :set_show, only: [:new, :create, :edit, :update]
+  before_action :set_show, only: [:new, :create, :update]
 
   # GET /bookings
   # GET /bookings.json
