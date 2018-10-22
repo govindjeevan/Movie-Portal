@@ -1,3 +1,7 @@
+
+<% @movie = Movie.where(:id=> ticket.movie_id ).first%>
+
+
 <style>
 
 
@@ -22,7 +26,7 @@ border-top-right-radius: 10px;
 }
 
 .manOfSteel {
-background: url("http://henrycavill.org/images/Films/2013-Man-of-Steel/posters/3-Walmart-Superman-a.jpg");
+background: url("<%= @movie.image.url(:medium) %>");
 background-size: cover;
 }
 
@@ -119,18 +123,15 @@ font-size: 11px;
 </style>
 
 
+
+
   <div class="movie-card">
     <div class="movie-header manOfSteel">
-      <div class="header-icon-container">
-        <a href="#">
-          <i class="material-icons header-icon"></i>
-        </a>
-      </div>
     </div><!--movie-header-->
     <div class="movie-content">
       <div class="movie-content-header">
         <a href="#">
-          <h3 class="movie-title"><%=ticket.movie_name%></h3>
+          <h3 class="movie-title"><%=@movie.title %></h3>
         </a>
         <div class="theatre-name"><%=ticket.theatre_name%></div>
       </div>
