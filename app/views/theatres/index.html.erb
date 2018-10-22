@@ -3,8 +3,9 @@
 
 <h1 id="title">Theatres</h1>
 
+<hr>
 
-<table  class="table-striped table">
+<table  class="table-striped table" id="dttb">
   <thead>
     <tr>
       <th>Name</th>
@@ -34,5 +35,13 @@
 <% if current_user.try(:admin?) %>
 <%= link_to "New Theatre".html_safe, new_theatre_path, :class => "btn btn3d btn-info " %>
 <% end %>
+
+
+<script>
+    $(document).ready(function() {
+        $("#dttb").dataTable();
+    });
+
+</script>
 
 
