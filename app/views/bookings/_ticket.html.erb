@@ -22,12 +22,9 @@ height: 367px;
 width: 100%;
 display: block;
 border-top-left-radius: 10px;
-border-top-right-radius: 10px;
-}
+  background-size: cover;
 
-.manOfSteel {
-background: url("<%= @movie.image.url(:medium) %>");
-background-size: cover;
+  border-top-right-radius: 10px;
 }
 
 
@@ -126,7 +123,7 @@ font-size: 11px;
 
 
   <div class="movie-card">
-    <div class="movie-header manOfSteel">
+    <div class="movie-header " style="background: url('<%= @movie.image.url(:medium) %>')">
     </div><!--movie-header-->
     <div class="movie-content">
       <div class="movie-content-header">

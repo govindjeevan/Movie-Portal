@@ -32,7 +32,6 @@ class ShowsController < ApplicationController
     @show.theatre_name = @theatre.name
     @show.movie_id = params[:movie_select]
     @show.movie_name=Movie.find(@show.movie_id).title
-    @show.movie_img=Movie.find(@show.movie_id).title
 
     if @show.save
         redirect_to @theatre
