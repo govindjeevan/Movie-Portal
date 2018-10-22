@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
 
 <h1>Theatres</h1>
 
@@ -35,4 +34,3 @@
 <% if current_user.try(:admin?) %>
 <%= link_to "New Theatre".html_safe, new_theatre_path, :class => "btn btn3d btn-info " %>
 <% end %>
-</div>
