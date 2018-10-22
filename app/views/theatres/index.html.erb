@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 
-<h1>Theatres</h1>
+<h1 id="title">Theatres</h1>
 
 
 <table  class="table-striped table">
@@ -34,3 +34,5 @@
 <% if current_user.try(:admin?) %>
 <%= link_to "New Theatre".html_safe, new_theatre_path, :class => "btn btn3d btn-info " %>
 <% end %>
+
+
