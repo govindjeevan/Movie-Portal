@@ -7,6 +7,8 @@ class BookingsController < ApplicationController
   # GET /bookings.json
   def index
     @bookings = Booking.where(:user_id => current_user.id).order("created_at DESC");
+    render :layout => false
+
   end
 
   # GET /bookings/1
@@ -35,8 +37,8 @@ class BookingsController < ApplicationController
     @booking.movie_name = @show.movie_name
     @booking.theatre_name = @show.theatre_name
     @booking.start_time = @show.start
-    if @show.seats >= @booking.seats
-      @show.seats = @show.seats - @booking.seats
+    if @show.capacity >= @booking.seats
+      @show.capacity = @show.capacity - @booking.seats
       @show.save
       respond_to do |format|
         if @booking.save

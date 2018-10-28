@@ -28,7 +28,7 @@ class ShowsController < ApplicationController
   def create
     @show = Show.new(show_params)
     @show.theatre_id = @theatre.id
-    @show.seats = @theatre.capacity
+    @show.capacity = @theatre.capacity
     @show.theatre_name = @theatre.name
     @show.movie_id = params[:movie_select]
     @show.movie_name=Movie.find(@show.movie_id).title

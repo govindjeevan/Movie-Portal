@@ -23,6 +23,12 @@ class MoviesController < ApplicationController
     @movie = current_user.movies.build
   end
 
+  def home
+    render :layout => false
+
+    @movies = Movie.all
+
+  end
   # GET /movies/1/edit
   def edit
   end

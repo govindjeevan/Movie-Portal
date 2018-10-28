@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_19_154619) do
+ActiveRecord::Schema.define(version: 2018_10_28_071204) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2018_10_19_154619) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.string "cover_image"
   end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -68,9 +69,9 @@ ActiveRecord::Schema.define(version: 2018_10_19_154619) do
     t.datetime "updated_at", null: false
     t.integer "theatre_id"
     t.integer "movie_id"
-    t.integer "seats"
     t.string "movie_name"
     t.string "theatre_name"
+    t.integer "capacity"
   end
 
   create_table "theatres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
