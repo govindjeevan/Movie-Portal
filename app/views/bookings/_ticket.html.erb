@@ -120,7 +120,7 @@ font-size: 11px;
 </style>
 
 
-<% @seat= Seat.where(:booking_id=> ticket.id).first%>
+<% @seat= Seat.where(:booking_id=> ticket.id)%>
 
 
   <div class="movie-card">
@@ -141,7 +141,11 @@ font-size: 11px;
 
         <div class="info-section">
           <label>Seats</label>
-          <span><%= @seat.seat_id if @seat%></span>
+          <span>
+            <% @seat.each do |seat| %>
+            <%= seat.seat_id %>,
+            <%end%>
+              </span>
         </div><!--seat-->
 
         <div class="info-section">
