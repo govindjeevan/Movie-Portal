@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_28_071204) do
+ActiveRecord::Schema.define(version: 2018_10_29_071216) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,12 +29,12 @@ ActiveRecord::Schema.define(version: 2018_10_28_071204) do
     t.integer "theatre_id"
     t.integer "user_id"
     t.integer "show_id"
-    t.integer "seats"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "movie_name"
     t.string "theatre_name"
     t.datetime "start_time"
+    t.integer "seats"
   end
 
   create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -62,6 +62,14 @@ ActiveRecord::Schema.define(version: 2018_10_28_071204) do
     t.integer "movie_id"
   end
 
+  create_table "seats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "show_id"
+    t.integer "booking_id"
+    t.integer "seat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "shows", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "start"
     t.datetime "end"
@@ -72,6 +80,7 @@ ActiveRecord::Schema.define(version: 2018_10_28_071204) do
     t.string "movie_name"
     t.string "theatre_name"
     t.integer "capacity"
+    t.integer "left"
   end
 
   create_table "theatres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

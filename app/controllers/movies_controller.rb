@@ -24,10 +24,9 @@ class MoviesController < ApplicationController
   end
 
   def home
-    render :layout => false
-
+    @first = Movie.find(1)
     @movies = Movie.all
-
+    render :layout => false
   end
   # GET /movies/1/edit
   def edit

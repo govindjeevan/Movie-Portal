@@ -3,7 +3,7 @@
 <head>
   <title>Movie Central</title>
   <%= csrf_meta_tags %>
-
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= favicon_link_tag asset_path('fav.ico'), :rel => 'icon', :type =>  'image/ico' %>
@@ -22,5 +22,7 @@
 
 </div>
 </div>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap.min.js"></script>
 </body>
 </html>

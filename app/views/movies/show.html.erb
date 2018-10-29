@@ -39,7 +39,6 @@
               <th>Show Time</th>
               <th>Seats left</th>
               <th>Action</th>
-
             </tr>
             </thead>
 
@@ -48,8 +47,8 @@
               <tr>
                 <td><%= @all_theatres.select {|x| x[0]==show.theatre_id}.first[1] %></td>
                 <td><%= show.start %></td>
-                <td><%= show.capacity %></td>
-                <td><%= link_to "Book", new_show_booking_path(show)%></td>
+                <td><%= show.left %></td>
+                <td><%= link_to "Book", new_show_booking_path(show), data: { turbolinks: false }%></td>
               </tr>
 
             <% end %>

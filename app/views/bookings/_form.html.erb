@@ -1,3 +1,55 @@
+<style>
+  .messagePanel {
+    border: solid 1px black;
+    height: auto;
+    padding: 20px;
+  }
+
+  .seat {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border: solid 1px black;
+    float: left;
+  }
+
+
+
+
+  .reserved {
+
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border: solid 1px black;
+    float: left;
+    background-color: red;
+
+  }
+
+  .clearfix {
+    clear: both;
+  }
+
+  .hovering {
+    background-color: yellow;
+  }
+
+  .selected {
+    background-color: limegreen;
+  }
+
+  .zoom {
+    transition: transform .2s; /* Animation */
+  }
+
+  .zoom:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+
+</style>
+
 <%= form_for([@show, booking]) do |form| %>
   <% if booking.errors.any? %>
     <div id="error_explanation">
@@ -11,14 +63,145 @@
     </div>
   <% end %>
 
+  <div class="row">
 
 
-  <div class="field">
-    <%= form.label :seats %>
-    <%= form.number_field :seats %>
+    <div class="col-md-6">
+
+
+    <%= submit_tag 'Select Seats', :type => 'button', :id => "btnSeating", :class => "btn btn-primary" %>
+      <br>
+      <br>
+    <div id="messagePanel" class="messagePanel" style="display: none">
+    </div>
+
+
   </div>
 
-  <div class="actions">
-    <%= form.submit 'Book', :class => 'btn btn-primary' %>
+
+  <div class="col-md-6">
+
+    <div class="col-md-6">
+      <div class="field">
+        <div class="row">
+          <div class="form-group col-lg-6">
+            <%= form.label :seats %>
+            <%= form.number_field :seats, class: 'form-control color' %>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="field" style="display: none">
+        <div class="row">
+          <div class="form-group col-lg-6">
+            <%= text_field_tag "seat_list" %>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="actions">
+      <%= form.submit 'Book', :class => 'btn btn-success btn-lg' %>
+    </div>
+
   </div>
+
+
+  </div>
+
+
+
 <% end %>
+
+<script>
+
+    $(document).ready(function () {
+        $('#btnSeating').on('click', createseating);
+        var booked_seats = [];
+        var selected = []
+
+        <% @booked_seats.each do  |seat|%>
+        booked_seats.push(<%= seat.seat_id %>)
+        <% end %>
+
+        console.log(booked_seats);
+
+        function createseating() {
+            var capacity = <%= @show.capacity %>
+                selected = []
+            var seatingValue = [];
+            var m = Math.floor(capacity / 10)
+            var n =capacity%10;
+            var seatingStyle = "<div style='width:auto;height:40px; background-color: lightblue; margin:20px;text-align: center; font-size: 20px; vertical-align: central'>Screen Here</div>";
+            seatingValue.push(seatingStyle);
+
+            for (var i = 0; i <= m; i++) {
+
+                for (var j = 0; j < 10; j++) {
+
+
+                    let index = i * 10 + j;
+                    if (index == 10 * m + n)
+                        break;
+                    var seatingStyle = "<div class='seat available zoom'>" + index + "</div>";
+                    if (booked_seats.includes(index))
+                        var seatingStyle = "<div class='seat reserved'>" + index + "</div>";
+                    seatingValue.push(seatingStyle);
+
+
+
+                    if (j === 9) {
+                        var seatingStyle = "<div class='clearfix'></div>";
+                        seatingValue.push(seatingStyle);
+
+                    }
+
+                }
+
+            }
+
+            $('#messagePanel').html(seatingValue);
+            $('#messagePanel').css("display","inline-block");
+
+            $(function () {
+                $('.available').on('click', function () {
+
+                    index = this.innerText;
+                    if ($(this).hasClass("selected")) {
+                        console.log(selected.indexOf(index))
+                        $(this).removeClass("selected");
+                        selected.splice(selected.indexOf(index), 1);
+                    } else {
+                        $(this).addClass("selected");
+                        selected.push(this.innerHTML)
+                    }
+
+                    console.log(selected)
+
+                    $('#seat_list').val(selected);
+                    $('#booking_seats').val(selected.length);
+
+                });
+
+                $('.seat').mouseenter(function () {
+                    $(this).addClass("hovering");
+
+                    $('.seat').mouseleave(function () {
+                        $(this).removeClass("hovering");
+
+                    });
+                });
+
+
+            });
+
+        };
+    })
+
+
+    //Note:In js the outer loop runs first then the inner loop runs completely so it goes o.l. then i.l. i.l .i.l .i.l. i.l etc and repea
+
+
+</script>

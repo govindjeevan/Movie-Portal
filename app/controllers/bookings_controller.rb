@@ -19,7 +19,9 @@ class BookingsController < ApplicationController
 
   # GET /bookings/new
   def new
+
     @booking = Booking.new
+    @booked_seats = Seat.where(:show_id=>@show.id)
   end
 
   # GET /bookings/1/edit
@@ -34,14 +36,21 @@ class BookingsController < ApplicationController
     @booking.theatre_id = @show.theatre_id
     @booking.movie_id = @show.movie_id
     @booking.user_id = current_user.id
+    logger.debug "The article was saved and now #{@show.attributes.inspect}"
     @booking.movie_name = @show.movie_name
     @booking.theatre_name = @show.theatre_name
     @booking.start_time = @show.start
-    if @show.capacity >= @booking.seats
-      @show.capacity = @show.capacity - @booking.seats
+    seats=params['seat_list'].split(/\s*,\s*/).map(&:to_i)
+    if @show.left >= @booking.seats
+      @show.left = @show.left- @booking.seats
       @show.save
       respond_to do |format|
         if @booking.save
+
+          seats.each do |seat|
+            @seat = Seat.new(booking_id: @booking.id, show_id: @show.id, seat_id: seat)
+            @seat.save
+          end
           format.html {redirect_to @booking, notice: 'Booking was successfully created.'}
           format.json {render :show, status: :created, location: @booking}
         else
@@ -50,6 +59,7 @@ class BookingsController < ApplicationController
         end
       end
     else
+
       redirect_to 'new'
     end
 

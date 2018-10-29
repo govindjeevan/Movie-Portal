@@ -4,8 +4,8 @@
 <h1 id="title">Theatres</h1>
 
 <hr>
-
-<table  class="table-striped table" id="dttb">
+<div class="container" style="width: 90%; margin-left: 0">
+<table  class="dataTable table table-striped " id="dttb" >
   <thead>
     <tr>
       <th>Name</th>
@@ -24,22 +24,29 @@
         <td><%= theatre.capacity %></td>
         <td><%= theatre.address %></td>
         <% if current_user.try(:admin?) %>
-        <td><%= link_to 'Show', theatre %><%= link_to 'Edit', edit_theatre_path(theatre) %><%= link_to 'Destroy', theatre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', theatre,:class => "btn btn-primary" %>
+          <%= link_to 'Edit', edit_theatre_path(theatre), :class => "btn btn-primary"  %>
+          <%= link_to 'Destroy', theatre, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger"%></td>
         <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 <% if current_user.try(:admin?) %>
-<%= link_to "New Theatre".html_safe, new_theatre_path, :class => "btn btn3d btn-info " %>
+<%= link_to "New Theatre".html_safe, new_theatre_path, :class => "btn btn-info " %>
 <% end %>
 
 
 <script>
     $(document).ready(function() {
-        $("#dttb").dataTable();
+        $("#dttb").dataTable({
+                width: 80,
+                responsive: true
+            }
+        );
     });
 
 </script>

@@ -1,5 +1,6 @@
-<h1>New Booking</h1>
+<h1>Book <%=@show.movie_name %> at <%=@show.theatre_name%></h1>
 
+<hr>
 <%= render 'form', booking: @booking %>
-
-<%= link_to 'Back', bookings_path %>
+<br>
+<%= link_to 'Back', bookings_path, :class => "btn btn-default" %>
