@@ -69,9 +69,6 @@
     <div class="col-md-6">
 
 
-    <%= submit_tag 'Select Seats', :type => 'button', :id => "btnSeating", :class => "btn btn-primary" %>
-      <br>
-      <br>
     <div id="messagePanel" class="messagePanel" style="display: none">
     </div>
 
@@ -118,7 +115,6 @@
 <script>
 
     $(document).ready(function () {
-        $('#btnSeating').on('click', createseating);
         var booked_seats = [];
         var selected = []
 
@@ -128,7 +124,6 @@
 
         console.log(booked_seats);
 
-        function createseating() {
             var capacity = <%= @show.capacity %>
                 selected = []
             var seatingValue = [];
@@ -196,8 +191,6 @@
 
 
             });
-
-        };
     })
 
 
