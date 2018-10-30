@@ -122,6 +122,9 @@
         booked_seats.push(<%= seat.seat_id %>)
         <% end %>
 
+
+
+
         console.log(booked_seats);
 
             var capacity = <%= @show.capacity %>
@@ -140,9 +143,9 @@
                     let index = i * 10 + j;
                     if (index == 10 * m + n)
                         break;
-                    var seatingStyle = "<div class='seat available zoom'>" + index + "</div>";
+                    var seatingStyle = "<div class='seat available zoom'>" + String.fromCharCode(i+65)+j+"</div>";
                     if (booked_seats.includes(index))
-                        var seatingStyle = "<div class='seat reserved'>" + index + "</div>";
+                        var seatingStyle = "<div class='seat reserved'>" + String.fromCharCode(i+65)+j + "</div>";
                     seatingValue.push(seatingStyle);
 
 
@@ -163,14 +166,16 @@
             $(function () {
                 $('.available').on('click', function () {
 
-                    index = this.innerText;
+                    content = this.innerText;
+                    index=(content.charCodeAt(0)-65)*10 + parseInt(content[1]);
+                    index=index.toString()
                     if ($(this).hasClass("selected")) {
                         console.log(selected.indexOf(index))
                         $(this).removeClass("selected");
                         selected.splice(selected.indexOf(index), 1);
                     } else {
                         $(this).addClass("selected");
-                        selected.push(this.innerHTML)
+                        selected.push(index)
                     }
 
                     console.log(selected)
@@ -192,6 +197,8 @@
 
             });
     })
+
+
 
 
     //Note:In js the outer loop runs first then the inner loop runs completely so it goes o.l. then i.l. i.l .i.l .i.l. i.l etc and repea

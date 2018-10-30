@@ -26,6 +26,7 @@ class TheatresController < ApplicationController
   # POST /theatres.json
   def create
     @theatre = Theatre.new(theatre_params)
+    @theatre.manager_id = params[:manager_id]
 
     respond_to do |format|
       if @theatre.save

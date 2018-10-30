@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 <div class="container1">
-<p>
-  <strong>Name:</strong>
+<h1>
   <%= @theatre.name %>
-</p>
-
+</h1>
+<hr>
 <p>
   <strong>Capacity:</strong>
   <%= @theatre.capacity %>
@@ -16,7 +15,7 @@
 </p>
 
 <% if @shows.blank? %>
-  <h3>No reviews just yet, would you like to add the first!</h3>
+  <p>No movies playing here currently</p>
 <% else %>
     <table class="table-striped table">
       <thead>
@@ -41,8 +40,12 @@
 <% end %>
 
 
-<%= link_to "Add a Show", new_theatre_show_path(@theatre) %>
-<%= link_to 'Edit', edit_theatre_path(@theatre) %> |
-<%= link_to 'Back', theatres_path %>
+  <% if current_user.admin? or current_user.id = @theatre.manager_id %>
+<%= link_to "Add a Show", new_theatre_show_path(@theatre), :class=>"btn btn-success btn-lg" %>
+  <br><br>
+<%= link_to 'Edit', edit_theatre_path(@theatre) , :class=>"btn btn-default" %>
+<%end%>
+
+  <%= link_to 'Back', theatres_path,:class=>"btn btn-default"  %>
 </div>
 

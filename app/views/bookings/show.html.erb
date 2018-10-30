@@ -1,36 +1,55 @@
+<% @seat= Seat.where(:booking_id=> @booking.id)%>
 
 <div class="container1 container">
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Movie:</strong>
-  <%= @booking.movie_name %>
-</p>
+<h1>
+  <%= @booking.movie_name %> at <%= @booking.theatre_name %>
 
-<p>
-  <strong>Theatre:</strong>
-  <%= @booking.theatre_name %>
-</p>
+</h1>
+<hr>
 
-<p>
-  <strong>No. Of Seats:</strong>
-  <%= @booking.seats %>
-</p>
+<h3>
+  <strong>Seats:</strong>
+  <% @seat.each do |seat| %>
+    <span class="seat_name"><%= seat.seat_id %></span>
+  <%end%>
+</h3>
 
-<p>
+<h3>
   <strong>Time:</strong>
-  <%= @booking.start_time %>
-</p>
+  <span><%=@booking.start_time.strftime("%a %d %b %l:%M %p")%></span>
+</h3>
 
-
+<% if current_user.admin? %>
 <p>
   <strong>User:</strong>
   <%= @booking.user_id %>
 </p>
 
 
+ >
 
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
-<%= link_to 'Back', bookings_path %>
+<%end%>
+
+<br>
+<%= link_to 'Edit', edit_booking_path(@booking), :class=>"btn btn-default" %>
+<%= link_to 'Back', bookings_path, :class=>"btn btn-default" %>
 </div>
+
+<script>
+
+    var len = $('.seat_name').length;
+    $('.seat_name').each(function () {
+        x=this.innerHTML;
+        console.log(x)
+        c=x%10;
+        r=Math.floor(x/10);
+        console.log(r)
+
+
+        this.innerHTML=String.fromCharCode(r+65) + c+','
+    })
+</script>
+

@@ -50,5 +50,18 @@
 </body>
 </html>
 
+<script>
 
+    var len = $('.seat_name').length;
+    $('.seat_name').each(function () {
+      x=this.innerHTML;
+      console.log(x)
+      c=x%10;
+      r=Math.floor(x/10);
+      console.log(r)
+
+
+      this.innerHTML=String.fromCharCode(r+65) + c+','
+  })
+</script>
 

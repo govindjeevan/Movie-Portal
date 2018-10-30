@@ -5,8 +5,10 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
+
     @first = Movie.find(1)
     @movies = Movie.all
+    render :layout => false
   end
 
   # GET /movies/1
@@ -15,7 +17,7 @@ class MoviesController < ApplicationController
     @reviews = Review.where(:movie_id=> @movie.id).order("created_at DESC")
     @shows= Show.where(:movie_id=> @movie.id)
     @all_theatre_ids=@shows.pluck(:theatre_id)
-    @all_theatres=Theatre.where(:id=>@all_theatre_ids).pluck(:id,:name)
+    @all_theatres=Theatre.where(:id=>@all_theatre_ids).pluck(:id,:name, :address)
   end
 
   # GET /movies/new
@@ -30,12 +32,15 @@ class MoviesController < ApplicationController
   end
   # GET /movies/1/edit
   def edit
+    @movie.genre = params[:genre_select]
+    @movie.save
   end
 
   # POST /movies
   # POST /movies.json
   def create
     @movie = current_user.movies.build(movie_params)
+    @movie.genre = params[:genre_select]
 
     respond_to do |format|
       if @movie.save

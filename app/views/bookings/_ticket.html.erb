@@ -128,9 +128,9 @@ font-size: 11px;
     </div><!--movie-header-->
     <div class="movie-content">
       <div class="movie-content-header">
-        <a href="#">
+        <%=link_to ticket do %>
           <h3 class="movie-title"><%=@movie.title %></h3>
-        </a>
+        <% end %>
         <div class="theatre-name"><%=ticket.theatre_name%></div>
       </div>
       <div class="movie-info">
@@ -143,7 +143,7 @@ font-size: 11px;
           <label>Seats</label>
           <span>
             <% @seat.each do |seat| %>
-            <%= seat.seat_id %>,
+              <span class="seat_name"><%= seat.seat_id %></span>
             <%end%>
               </span>
         </div><!--seat-->

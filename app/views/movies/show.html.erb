@@ -1,54 +1,105 @@
-    <div class="row">
-      <div class="col-md-4">
+<style>
+
+  .star-ratings-css {
+    unicode-bidi: bidi-override;
+    color: #c5c5c5;
+    font-size: 25px;
+    height: 25px;
+    width: 100px;
+    position: relative;
+    padding: 0;
+    text-shadow: 0px 1px 0 #a2a2a2;
+  }
+  .star-ratings-css-top {
+    color: #e7711b;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    overflow: hidden;
+  }
+  .star-ratings-css-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+  }
+</style>
+<div class="row">
+  <br>
+      <div class="col-md-5">
+        <br>
         <%= image_tag @movie.image.url(:medium) %>
+        <br>
+        <br>
+        <br>
         <div class="table-responsive">
           <table class="table">
             <tbody>
             <tr>
               <td><strong>Title:</strong></td>
-              <td><%= @movie.title %></td>
+              <td><b><%= @movie.title %></b></td>
             </tr>
             <tr>
               <td><strong>Description:</strong></td>
               <td><%= @movie.description %></td>
             </tr>
             <tr>
+              <td><strong>Genre:</strong></td>
+              <td><%= @movie.genre %></td>
+            </tr>
+            <tr>
               <td><strong>Movie length:</strong></td>
-              <td><%= @movie.movie_length %></td>
+              <td><%= @movie.movie_length.to_f*60 %> min</td>
             </tr>
             <tr>
               <td><strong>Director:</strong></td>
               <td><%= @movie.director %></td>
             </tr>
             <tr>
-              <td><strong>Rating:</strong></td>
-              <td><%= @movie.rating %></td>
+              <td><strong>Rating:</strong>
+              </td>
+              <td>
+              <div class="star-ratings-css">
+                <div class="star-ratings-css-top" style="width: <%=@movie.rating.to_f/5.0*100 %>%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              </div>
+              </td>
             </tr>
             </tbody>
           </table>
         </div>
       </div>
-      <div class="col-md-7 col-md-offset-1">
+      <div class="col-md-6">
+
+        <h2>Show Timings for <b style="color: black"><%=@movie.title %></b></h2>
+        <hr>
 
         <% if @shows.blank? %>
         <% else %>
-          <table class="table-striped table">
+          <table class="table-striped table" id="dttb">
             <thead>
             <tr>
               <th>Theatre</th>
+              <th>Location</th>
               <th>Show Time</th>
               <th>Seats left</th>
-              <th>Action</th>
+              <th>Tickets</th>
             </tr>
             </thead>
 
             <tbody>
             <% @shows.each do |show| %>
+            <% theatre= @all_theatres.select {|x| x[0]==show.theatre_id}.first%>
               <tr>
-                <td><%= @all_theatres.select {|x| x[0]==show.theatre_id}.first[1] %></td>
-                <td><%= show.start %></td>
+                <td><%= theatre[1] %></td>
+                <td><%= theatre[2] %></td>
+                <td><%= show.start.strftime("%a %d %b %l:%M %p") %></td>
                 <td><%= show.left %></td>
-                <td><%= link_to "Book", new_show_booking_path(show), data: { turbolinks: false }%></td>
+                <td><%= link_to new_show_booking_path(show), data: { turbolinks: false } do%>
+                    <i class="fa fa-lg fa-ticket"></i>
+                    Get Tickets
+                    <%end%>
+                </td>
               </tr>
 
             <% end %>
@@ -57,28 +108,55 @@
         <% end %>
 
 
-
-
+        <br>
+        <br>
+        <br>
+        <h2><%=@movie.title %> Reviews</h2>
+        <hr>
         <% if @reviews.blank? %>
-          <h3>No reviews just yet, would you like to add the first!</h3>
-          <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
+          <p>No reviews just yet, would you like to add one?</p>
+          <%= link_to "Write a Review", new_movie_review_path(@movie), class: "btn btn-primary" %>
         <% else %>
           <% @reviews.each do |review| %>
             <div class="reviews">
-              <p><%= review.rating %></p>
+              <p>
+              <div class="star-ratings-css">
+                <div class="star-ratings-css-top" style="width: <%=review.rating.to_f/5.0*100 %>%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              </div>
+              <br>
               <p><%= review.comment %></p>
             </div>
+            <hr style="border-width: 0.6px">
           <% end %>
-          <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
+          <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-primary" %>
 
       <% end %>
       </div>
 
-
     </div>
   </div>
-  <% if current_user.try(:admin?) %>
-  <%= link_to 'Edit', edit_movie_path(@movie) %> |
-  <% end %>
-  <%= link_to 'Back', movies_path %>
+<%= link_to 'Back', movies_path,:class=>"btn btn-default" %>
 
+  <% if current_user.try(:admin?) %>
+  <%= link_to 'Edit', edit_movie_path(@movie),:class=>"btn btn-default"  %>
+  <%= link_to 'Destroy', @movie, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger"%></td>
+
+<% end %>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#dttb").dataTable({
+                    width: 80,
+                    responsive: true,
+                    "columnDefs": [
+                    { "orderable": false, "targets": [3,4] }
+                ]
+                }
+            );
+        });
+
+
+
+    </script>

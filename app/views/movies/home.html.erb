@@ -3,21 +3,84 @@
 <head>
   <title>Movie Central</title>
   <%= csrf_meta_tags %>
-
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= favicon_link_tag asset_path('fav.ico'), :rel => 'icon', :type =>  'image/ico' %>
 </head>
 
+<style>
+  .image-container{
+    height:600px;
+    background-color: white;
+  }
+
+    .title{
+
+      margin: 2%;
+      margin-left: .7vw;
+      font-size: 1vw;
+      color: black;
+    }
+
+
+  .star-ratings-css {
+    margin-left: .5vw;
+    unicode-bidi: bidi-override;
+    color: #c5c5c5;
+    font-size: 25px;
+    height: 25px;
+    width: 100px;
+    position: relative;
+    padding: 0;
+    text-shadow: 0px 1px 0 #a2a2a2;
+  }
+  .star-ratings-css-top {
+    color: #e7711b;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    overflow: hidden;
+  }
+  .star-ratings-css-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+  }
+</style>
 <body>
 <%= render 'layouts/header' %>
 
 
-  <div class="container">
-    <% flash.each do |name, msg| %>
-      <%= content_tag(:div, msg, class: "alert alert-info") %>
-    <% end %>
+<div class="container">
+  <% if !user_signed_in? %>
+    <div class="jumbotron">
+      <h1 style="color: white">Book your Cinema!</h1>
+      <%= link_to "Sign Up To Book!", new_user_registration_path, class: "btn btn-dark btn-lg" %>
+    </div>
+  <% end %>
 
-  </div>
+  <h1 style="color: white">Now Showing</h1>
+
+  <hr style="border-color: white">
+
+  <div id= "container">
+    <div class="photobanner center">
+      <% @movies.each do |movie| %>
+        <div class="image-container" style="display: inline-block">
+          <%= link_to (image_tag movie.image.url(:medium), class: 'image img-thumbnail ',width: "354" ,height:"526"), movie %>
+          <div class="title "><%= movie.title %></div>
+          <div class="star-ratings-css ">
+            <div class="star-ratings-css-top" style="width: <%=movie.rating.to_f/5.0*100 %>%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div></div>
+
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 </body>
 </html>
+

@@ -1,22 +1,35 @@
-<% if !user_signed_in? %>
-  <div class="jumbotron">
-    <h1>Book your Cinema!</h1>
-    <%= link_to "Sign Up To Book!", new_user_registration_path, class: "btn btn-dark btn-lg" %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Central</title>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= favicon_link_tag asset_path('fav.ico'), :rel => 'icon', :type =>  'image/ico' %>
+</head>
+
+<body>
+<%= render 'layouts/header' %>
+
+
+  <div class="container">
+    <% if !user_signed_in? %>
+      <div class="jumbotron">
+        <h1 style="color: white">Book your Cinema!</h1>
+        <%= link_to "Sign Up To Book!", new_user_registration_path, class: "btn btn-dark btn-lg" %>
+      </div>
+    <% end %>
+
+    <h1 style="color: white">All Movies</h1>
+
+    <hr style="border-color: white">
+
+    <%= render :partial => "movies/movie", :collection => @movies %>
+
+
   </div>
-<% end %>
-
-<h1>All Movies</h1>
-
-<hr>
-
-
-<div id= "container">
-  <div class="photobanner center">
-    <%= link_to (image_tag @first.image.url(:medium), class: 'image first img-thumbnail' ,width: "354" ,height:"236"), @first %>
-  <% @movies.each do |movie| %>
-  <% if movie.id!=1 %>
-        <%= link_to (image_tag movie.image.url(:medium), class: 'image img-thumbnail ',width: "354" ,height:"236"), movie %>
-  <% end %>
-  <% end %>
-</div>
-</div>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap.min.js"></script>
+</body>
+</html>

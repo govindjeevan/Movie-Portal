@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :start %>
-    <%= form.datetime_select :start %>
+    <%= form.datetime_select :start,:class=>"form-control" %>
   </div>
 
   <div class="field">
     <% @movies=Movie.all%>
-    <%= select_tag "movie_select", options_from_collection_for_select(@movies, "id", "title")%>
+    <%= select_tag "movie_select", options_from_collection_for_select(@movies, "id", "title"), :class=>"form-control"%>
   </div>
 
 
