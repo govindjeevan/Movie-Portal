@@ -26,8 +26,10 @@ class MoviesController < ApplicationController
   end
 
   def home
-    @first = Movie.find(1)
-    @movies = Movie.all
+
+
+    @movies = Movie.all.order("created_at DESC").limit(10)
+
     render :layout => false
   end
   # GET /movies/1/edit
