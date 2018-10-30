@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36a3a4c2-b414-411c-b147-54218a11aaf4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b305cd9-e0f6-41c8-8647-26f4c80fff61.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0b305cd9-e0f6-41c8-8647-26f4c80fff61.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/bookings_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/bookings_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/theatres_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/theatres_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/bookings/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/bookings/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/bookings/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/bookings/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/movies/_movie.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/movies/_movie.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/movies/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/movies/home.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/movies/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/movies/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/movies/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/movies/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/reviews/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/reviews/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/reviews/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/reviews/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/shows/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shows/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/shows/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shows/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/theatres/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/theatres/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/theatres/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/theatres/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -104,10 +89,11 @@
       <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/bookings/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+            <state relative-caret-position="171">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -166,8 +152,8 @@
       <file leaf-file-name="bookings_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/bookings_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-915">
-              <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+            <state relative-caret-position="120">
+              <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -260,8 +246,8 @@
         <option value="$PROJECT_DIR$/app/views/shows/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/theatres/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/shows/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/bookings_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/theatres/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/bookings_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/bookings/index.html.erb" />
       </list>
     </option>
@@ -548,12 +534,12 @@
       <workItem from="1540615051371" duration="2560000" />
       <workItem from="1540708349565" duration="34443000" />
       <workItem from="1540805955600" duration="18880000" />
-      <workItem from="1540884736617" duration="3853000" />
+      <workItem from="1540884736617" duration="4029000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105742000" />
+    <option name="totallyTimeSpent" value="105918000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -934,13 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/bookings_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-915">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -955,12 +934,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/bookings_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bookings/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+        <state relative-caret-position="171">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

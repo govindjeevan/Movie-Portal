@@ -7,8 +7,9 @@ class BookingsController < ApplicationController
   # GET /bookings.json
   def index
     @bookings = Booking.where(:user_id => current_user.id).order("created_at DESC").limit(6);
+    theatre=Theatre.where(:manager_id=>current_user.id).pluck(:id);
 
-    @managerBookings=Booking.where(:manager_id=>current_user.id).order("created_at DESC");
+    @managerBookings=Booking.where(:theatre_id=>theatre).order("created_at DESC");
     @adminBookings=Booking.all
     render :layout => false
 
