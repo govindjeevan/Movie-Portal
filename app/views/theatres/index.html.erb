@@ -11,9 +11,7 @@
       <th>Name</th>
       <th>Capacity</th>
       <th>Address</th>
-      <% if current_user.try(:admin?) %>
       <th> Actions</th>
-      <% end %>
     </tr>
   </thead>
 
@@ -23,7 +21,7 @@
         <td><%= theatre.name %></td>
         <td><%= theatre.capacity %></td>
         <td><%= theatre.address %></td>
-        <% if current_user.try(:admin?) %>
+        <% if current_user.try(:admin?) or current_user.id = theatre.manager_id  %>
         <td><%= link_to 'Show', theatre,:class => "btn btn-primary" %>
           <%= link_to 'Edit', edit_theatre_path(theatre), :class => "btn btn-primary"  %>
           <%= link_to 'Destroy', theatre, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger"%></td>

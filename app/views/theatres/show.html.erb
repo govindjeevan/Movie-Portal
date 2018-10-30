@@ -14,6 +14,7 @@
   <%= @theatre.address %>
 </p>
 
+
 <% if @shows.blank? %>
   <p>No movies playing here currently</p>
 <% else %>
@@ -30,8 +31,8 @@
       <% @shows.each do |show| %>
         <tr>
           <td><%= @all_movies.select {|x| x[0]==show.movie_id}.first[1] %></td>
-          <td><%= show.start %></td>
-          <td><%= link_to "Book", new_show_booking_path(show)%></td>
+          <td><%= show.start.strftime("%a %d %b %l:%M %p") %></td>
+          <td><%= link_to "Book", new_show_booking_path(show), class:"btn btn-primary"%></td>
         </tr>
 
       <% end %>

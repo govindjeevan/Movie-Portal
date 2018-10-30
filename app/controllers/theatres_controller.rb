@@ -27,7 +27,9 @@ class TheatresController < ApplicationController
   def create
     @theatre = Theatre.new(theatre_params)
     @theatre.manager_id = params[:manager_id]
-
+    @theatre_manager = User.where(:id=>@theatre.manager_id).first;
+    @theatre_manager.manager=1;
+    @theatre_manager.save
     respond_to do |format|
       if @theatre.save
         format.html { redirect_to @theatre, notice: 'Theatre was successfully created.' }
@@ -67,6 +69,7 @@ class TheatresController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_theatre
       @theatre = Theatre.find(params[:id])
+      @theatre_manager = User.where(:id=>@theatre.manager_id).first;
       @all_movies_ids = Show.where(:theatre_id=>@theatre.id).pluck(:movie_id)
       @all_movies = Movie.where(:id => @all_movies_ids).pluck(:id,:title)
     end

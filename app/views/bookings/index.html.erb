@@ -47,6 +47,51 @@
 
 
 </div>
+
+<% if current_user.admin? or current_user.manager? %>
+<div class="container card">
+<h1 style="color: black">Booking Log</h1>
+  <hr style="border-color: black">
+  <table  class="dataTable table table-striped " id="dttb" >
+    <thead>
+    <tr>
+      <th>Movie</th>
+      <th>User</th>
+      <th>Number of seats</th>
+      <th> Theatre</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <%if current_user.manager? %>
+    <% @managerBookings.each do |booking| %>
+      <tr>
+        <td><%= booking.movie_name %></td>
+        <td><%= booking.user_id %></td>
+        <td><%= booking.seats %></td>
+        <td><%= booking.theatre_name %></td>
+      </tr>
+    <% end %>
+    </tbody>
+      <%end%>
+
+      <%if current_user.admin? %>
+
+      <% @adminBookings.each do |booking| %>
+        <tr>
+          <td><%= booking.movie_name %></td>
+          <td><%= booking.user_id %></td>
+          <td><%= booking.seats %></td>
+          <td><%= booking.theatre_name %></td>
+        </tr>
+      <% end %>
+      <%end%>
+        </table>
+
+
+</div>
+
+  <%end%>
 </body>
 </html>
 
@@ -63,5 +108,17 @@
 
       this.innerHTML=String.fromCharCode(r+65) + c+','
   })
+</script>
+
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#dttb').dataTable({
+                width: 80,
+                responsive: true
+            }
+        );
+    });
 </script>
 

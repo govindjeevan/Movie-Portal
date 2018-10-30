@@ -205,8 +205,8 @@
         <%=movie.description %>
       </p>
       <br>
-      <span class="minutes"><%=movie.movie_length.to_f*60%> min</span>
-      <p class="type">Action, Crime, Fantasy</p>
+      <span class="minutes">Length: <%=movie.movie_length.to_f*60%> min</span>
+      <p class="type">        <%=movie.genre %></p>
     </div>
     <div class="movie_social">
       <div class="star-ratings-css">

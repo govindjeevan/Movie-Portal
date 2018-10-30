@@ -117,7 +117,12 @@
           <p>No reviews just yet, would you like to add one?</p>
           <%= link_to "Write a Review", new_movie_review_path(@movie), class: "btn btn-primary" %>
         <% else %>
+          <% user_ids=Review.pluck(:user_id) %>
+          <% users = User.where(:id=> user_ids) %>
+
           <% @reviews.each do |review| %>
+
+            <% user = users.select {|x| x.id == review.user_id}.first %>
             <div class="reviews">
               <p>
               <div class="star-ratings-css">
@@ -125,7 +130,9 @@
                 <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
               </div>
               <br>
-              <p><%= review.comment %></p>
+              <p><i>"<%= review.comment %>"</i></p>
+              <p><%= user.email%></p>
+
             </div>
             <hr style="border-width: 0.6px">
           <% end %>

@@ -16,8 +16,9 @@
   <div class="container">
     <% if !user_signed_in? %>
       <div class="jumbotron">
-        <h1 style="color: white">Book your Cinema!</h1>
-        <%= link_to "Sign Up To Book!", new_user_registration_path, class: "btn btn-dark btn-lg" %>
+        <h1 style="color: black">Book your Cinema!</h1>
+        <br>
+        <%= link_to "Sign Up To Book!", new_user_registration_path, class: "btn btn-primary btn-lg" %>
       </div>
     <% end %>
 
