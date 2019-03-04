@@ -1,0 +1,34 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="x_panel">
+    <div class="x_title">
+      <h2>Listing Roles</h2>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+      <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @roles.each do |role| %>
+            <tr>
+              <td><%= role.name %></td>
+              <td><%= link_to  '<i class="fa fa-user"></i>Show'.html_safe, role ,:class=>"btn btn-primary btn-xs"%></td>
+              <td><%= link_to '<i class="fa fa-pencil"></i>Edit'.html_safe, edit_role_path(role) ,:class=>"btn btn-success btn-xs" %></td>
+              <td><%= link_to '<i class="fa fa-trash-o"></i>Destroy'.html_safe, role, method: :delete, data: {confirm: 'Are you sure?'} ,:class=>"btn btn-danger btn-xs" %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <br>
+
+      <%= link_to 'New Role', new_role_path,:class=>"btn btn-center btn-primary" %>
+    </div>
+  </div>
+</div>

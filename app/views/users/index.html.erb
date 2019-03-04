@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+
+<h1 id="title">Users</h1>
+
+<hr>
+<div class="container" style="width: 90%; margin-left: 0">
+  <table  class="dataTable table table-striped " id="dttb" >
+    <thead>
+    <tr>
+      <th>Email</th>
+      <th>Assign Role</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td>
+        <% if can? :assign_roles, User %>
+          <br/>
+          <%= link_to  "javascript:window.open('#{assign_roles_path(user.id)}?layout=basic','mywindowtitle','width=600,height=600')", class: "btn btn-xs btn-success" do %>
+            <i class="fa fa-pencil m-right-xs"></i> Assign Roles
+          <% end %>
+        <% end %>
+        </td>
+
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+
+<script>
+    $(document).ready(function() {
+        $("#dttb").dataTable({
+                width: 80,
+                responsive: true
+            }
+        );
+    });
+
+</script>
+
+

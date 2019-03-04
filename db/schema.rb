@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_081332) do
+ActiveRecord::Schema.define(version: 2019_03_04_064956) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,17 +24,34 @@ ActiveRecord::Schema.define(version: 2018_10_30_081332) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "assignments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "role_id"
+    t.boolean "active"
+  end
+
   create_table "bookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "movie_id"
     t.integer "theatre_id"
     t.integer "user_id"
     t.integer "show_id"
+    t.integer "seats"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "movie_name"
     t.string "theatre_name"
     t.datetime "start_time"
-    t.integer "seats"
+  end
+
+  create_table "designation_mappings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.boolean "active"
+    t.text "roles"
+    t.string "name"
   end
 
   create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -50,8 +67,15 @@ ActiveRecord::Schema.define(version: 2018_10_30_081332) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-    t.string "cover_image"
     t.string "genre"
+  end
+
+  create_table "permissions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "actions"
+    t.string "subject_class"
+    t.text "description"
   end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -61,6 +85,21 @@ ActiveRecord::Schema.define(version: 2018_10_30_081332) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "movie_id"
+  end
+
+  create_table "role_permissions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "role_id"
+    t.integer "permission_id"
+  end
+
+  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.boolean "booking_role"
+    t.boolean "switchable"
   end
 
   create_table "seats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -103,6 +142,7 @@ ActiveRecord::Schema.define(version: 2018_10_30_081332) do
     t.datetime "updated_at", null: false
     t.boolean "admin"
     t.boolean "manager"
+    t.integer "roles_mask"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

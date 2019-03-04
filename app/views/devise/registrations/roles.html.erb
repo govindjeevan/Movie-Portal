@@ -1,0 +1,27 @@
+<h2 style="width: 100%;text-align: center;"><b><%= @user.email%></b></h2>
+
+<%= form_for :user do |f| %>
+  <table class="table table-hover" style="width:512px; margin:0 auto;">
+    <tbody>
+    <tr>
+      <th>Role name</th>
+      <th>Opt role</th>
+    </tr>
+    <% for role in Role.all %>
+      <tr>
+        <td><%= h role.name.camelize %></td>
+        <td>
+          <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %></td>
+
+      </tr>
+    <% end %>
+    <tr>
+      <td colspan='2'>
+        <%= hidden_field_tag "layout","basic" %>
+        <%= f.submit "Save Roles", :class => "btn btn-primary" %>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+<% end %>

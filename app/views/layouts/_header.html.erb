@@ -64,6 +64,30 @@
 
         <% end %>
 
+        <%= link_to  permissions_path do %>
+          <li>
+            <i class="fa fa-plus"></i>
+            <span class="tooltip">Permissions</span>
+          </li>
+
+        <% end %>
+
+        <%= link_to  users_path do %>
+          <li>
+            <i class="fa fa-plus"></i>
+            <span class="tooltip">View Users</span>
+          </li>
+
+        <% end %>
+
+        <%= link_to  new_role_path do %>
+          <li>
+            <i class="fa fa-plus"></i>
+            <span class="tooltip">New Roles</span>
+          </li>
+
+        <% end %>
+
       <% end %>
 
 

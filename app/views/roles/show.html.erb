@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @role.name %>
+</p>
+<table class="table table-blue-striped table-hover" style="width:512px; margin:0 auto;">
+  <tbody>
+  <tr>
+    <th>Permission</th>
+    <th>Controller</th>
+  </tr>
+  <% @role.permissions.each do |permission| %>
+      <tr>
+        <td><%= h permission.actions %></td>
+        <td><%= h permission.subject_class %></td>
+      </tr>
+
+  <% end %>
+  </tbody>
+</table>
+<%= link_to '<i class="fa fa-pencil"></i>Edit'.html_safe, edit_role_path(@role) %> |
+<%= link_to 'Back', roles_path %>
+<style>
+    .table-blue-striped > tbody > tr > td {
+        text-align: center;
+    }
+</style>
