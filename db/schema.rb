@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_081332) do
+ActiveRecord::Schema.define(version: 2019_03_31_065340) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2018_10_30_081332) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "assignments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "role_id"
+    t.boolean "active"
+  end
+
   create_table "bookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "movie_id"
     t.integer "theatre_id"
@@ -35,6 +43,15 @@ ActiveRecord::Schema.define(version: 2018_10_30_081332) do
     t.string "theatre_name"
     t.datetime "start_time"
     t.integer "seats"
+  end
+
+  create_table "designation_mappings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.boolean "active"
+    t.text "roles"
+    t.string "name"
   end
 
   create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -103,6 +120,8 @@ ActiveRecord::Schema.define(version: 2018_10_30_081332) do
     t.datetime "updated_at", null: false
     t.boolean "admin"
     t.boolean "manager"
+    t.integer "roles_mask"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

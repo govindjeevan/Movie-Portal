@@ -5,41 +5,45 @@
 
 <hr>
 <div class="container" style="width: 90%; margin-left: 0">
-<table  class="dataTable table table-striped " id="dttb" >
-  <thead>
+  <table class="dataTable table table-striped " id="dttb">
+    <thead>
     <tr>
       <th>Name</th>
       <th>Capacity</th>
       <th>Address</th>
       <th> Actions</th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @theatres.each do |theatre| %>
       <tr>
         <td><%= theatre.name %></td>
         <td><%= theatre.capacity %></td>
         <td><%= theatre.address %></td>
-        <% if current_user.try(:admin?) or current_user.id = theatre.manager_id  %>
-        <td><%= link_to 'Show', theatre,:class => "btn btn-primary" %>
-          <%= link_to 'Edit', edit_theatre_path(theatre), :class => "btn btn-primary"  %>
-          <%= link_to 'Destroy', theatre, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger"%></td>
+        <% if current_user.try(:admin?) or current_user.id = theatre.manager_id %>
+          <td><%= link_to 'Show', theatre, :class => "btn btn-primary" %>
+            <% if can? :update, Theatre %>
+              <%= link_to 'Edit', edit_theatre_path(theatre), :class => "btn btn-primary" %>
+            <% end %>
+            <% if can? :destroy, Theatre %>
+              <%= link_to 'Destroy', theatre, method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-danger" %></td>
+            <% end %>
         <% end %>
       </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 </div>
 
 <br>
 <% if current_user.try(:admin?) %>
-<%= link_to "New Theatre".html_safe, new_theatre_path, :class => "btn btn-info " %>
+  <%= link_to "New Theatre".html_safe, new_theatre_path, :class => "btn btn-info " %>
 <% end %>
 
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#dttb").dataTable({
                 width: 80,
                 responsive: true

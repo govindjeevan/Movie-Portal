@@ -37,7 +37,7 @@ gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'rails-ujs', '~> 0.1.0'
 
-
+gem 'cancancan', '~> 2.0'
 gem "font-awesome-rails"
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

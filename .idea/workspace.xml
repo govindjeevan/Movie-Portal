@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36a3a4c2-b414-411c-b147-54218a11aaf4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b305cd9-e0f6-41c8-8647-26f4c80fff61.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0b305cd9-e0f6-41c8-8647-26f4c80fff61.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/movie_ticket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/movie_ticket.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/movies_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/movies_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/theatres/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/theatres/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -19,6 +28,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Movie_Portal@Development__movie_ticket.rcov" NAME="Development: movie_ticket Coverage Results" MODIFIED="1554268859589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="movie_ticket" />
     <SUITE FILE_PATH="coverage/movie_ticket@Development__movie_ticket.rcov" NAME="Development: movie_ticket Coverage Results" MODIFIED="1540884768537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="movie_ticket" />
   </component>
   <component name="DatabaseView">
@@ -48,66 +58,50 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="ticket_db: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ticket_db@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ticket_db: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="users: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="movies_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/movies_controller.rb">
+      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+            <state relative-caret-position="246">
+              <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ability.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/ability.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reviews_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/bookings/index.html.erb">
+        <entry file="file://$PROJECT_DIR$/app/views/theatres/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reviews_controller.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users" pinned="false" current-in-tab="false">
-        <entry file="das://0b305cd9-e0f6-41c8-8647-26f4c80fff61/schema/ticket_db/table/users">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="bookings" pinned="false" current-in-tab="false">
-        <entry file="das://0b305cd9-e0f6-41c8-8647-26f4c80fff61/schema/ticket_db/table/bookings">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reviews" pinned="false" current-in-tab="false">
-        <entry file="das://0b305cd9-e0f6-41c8-8647-26f4c80fff61/schema/ticket_db/table/reviews">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+            <state relative-caret-position="259">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -121,20 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movies" pinned="false" current-in-tab="false">
-        <entry file="das://0b305cd9-e0f6-41c8-8647-26f4c80fff61/schema/ticket_db/table/movies">
+      <file leaf-file-name="users" pinned="false" current-in-tab="false">
+        <entry file="das://0b305cd9-e0f6-41c8-8647-26f4c80fff61/schema/ticket_db/table/users">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bookings_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/bookings_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-654">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -143,7 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sea</find>
       <find>x</find>
       <find>order</find>
       <find>mask</find>
@@ -173,6 +157,7 @@
       <find>img</find>
       <find>color</find>
       <find>str</find>
+      <find>can</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -211,7 +196,6 @@
         <option value="$PROJECT_DIR$/app/views/bookings/_ticket.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/models/movie.rb" />
         <option value="$PROJECT_DIR$/app/views/movies/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/movies/_movie.html.erb" />
@@ -225,11 +209,14 @@
         <option value="$PROJECT_DIR$/app/views/shows/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/theatres/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/shows/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/theatres/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/bookings_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/bookings/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/movies_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/movies_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/app/views/theatres/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/ability.rb" />
       </list>
     </option>
   </component>
@@ -252,10 +239,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="609" />
-    <option name="y" value="80" />
-    <option name="width" value="1390" />
-    <option name="height" value="1000" />
+    <option name="x" value="1920" />
+    <option name="y" value="24" />
+    <option name="width" value="1920" />
+    <option name="height" value="1009" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -266,107 +253,43 @@
         <subPane>
           <expand>
             <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
+              <item name="Movie-Portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Movie-Portal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
+              <item name="Movie-Portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Movie-Portal" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
+              <item name="Movie-Portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Movie-Portal" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
+              <item name="Movie-Portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Movie-Portal" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
+              <item name="Movie-Portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Movie-Portal" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="bookings" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="movies" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="reviews" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="shows" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
+              <item name="Movie-Portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Movie-Portal" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="theatres" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="movie_ticket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie_ticket" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-              <item name="migrate" type="462c0819:PsiDirectoryNode" />
+              <item name="Movie-Portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Movie-Portal" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -384,7 +307,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -516,11 +439,13 @@
       <workItem from="1540708349565" duration="34443000" />
       <workItem from="1540805955600" duration="18880000" />
       <workItem from="1540884736617" duration="9203000" />
+      <workItem from="1554017573754" duration="5119000" />
+      <workItem from="1554266029754" duration="3134000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111092000" />
+    <option name="totallyTimeSpent" value="119345000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -532,17 +457,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1920" height="1009" extended-state="6" />
+    <frame x="1920" y="24" width="1920" height="1009" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49840087" weight="0.3284091" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5053305" side_tool="true" weight="0.3272727" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4946695" visible="true" weight="0.3215909" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49733475" weight="0.3375" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4946695" weight="0.41363636" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49733475" visible="true" weight="0.3375" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4946695" weight="0.3693182" />
       <window_info anchor="bottom" id="Database Console" order="8" sideWeight="0.4936034" weight="0.32954547" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26812366" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27345416" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.18603411" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -562,23 +487,23 @@
       <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.4936034" weight="0.32954547" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4946695" visible="true" weight="0.3272727" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26545843" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49840087" weight="0.3284091" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.18603411" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32954547" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4946695" weight="0.3693182" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5053305" side_tool="true" visible="true" weight="0.3272727" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32954547" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,20 +539,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://0b305cd9-e0f6-41c8-8647-26f4c80fff61/schema/ticket_db/table/theatres">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/theatres/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-119" />
@@ -692,13 +603,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/shows/_show.json.jbuilder">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="79" selection-start-line="20" selection-start-column="79" selection-end-line="20" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/movies/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="695">
@@ -755,9 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="885">
           <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -765,9 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -816,9 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
           <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -836,13 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/theatres/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -854,9 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
           <caret line="127" column="29" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -888,27 +773,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://0b305cd9-e0f6-41c8-8647-26f4c80fff61/schema/ticket_db/table/shows">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/app/views/bookings/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+    <entry file="file://$PROJECT_DIR$/config.ru">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/bookings_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-654">
+        <state relative-caret-position="60">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bookings/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
+    <entry file="das://0b305cd9-e0f6-41c8-8647-26f4c80fff61/schema/ticket_db/table/shows">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -921,15 +813,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/movies_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+        <state relative-caret-position="-885">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/theatres/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="185">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/ability.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
         </state>
       </provider>
     </entry>
