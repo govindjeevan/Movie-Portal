@@ -43,8 +43,8 @@
 
       <% end %>
 
-      <% if current_user.try(:admin?) %>
-
+    
+      <% if can? :manage, Movie %>
 
         <%= link_to  new_movie_path do %>
           <li>
@@ -53,8 +53,9 @@
           </li>
 
         <% end %>
+      <% end %>
 
-
+      <% if can? :manage, Theatre %>
         <%= link_to  new_theatre_path do %>
 
           <li>
@@ -100,7 +101,6 @@
 
   </ul>
 </nav>
-
 
 
 
