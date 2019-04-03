@@ -32,12 +32,16 @@ class Ability
     if user.role == 'admin'
       can :manage, :all
     elsif user.role == 'manager'
+      can :read, Movie
+      can :home, Movie
       can :update, Theatre
       can :manage, Show
     elsif user.role == 'producer'
       can :manage, Movie
     elsif user.role == 'customer'
-      can :manage, Ticket
+      can :read, Movie
+      can :home, Movie
+      can :manage, Booking
     else
       can :read, :all
     end
