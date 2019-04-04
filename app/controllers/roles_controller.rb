@@ -26,8 +26,8 @@ class RolesController < ApplicationController
   end
 
   def check_admin
-     if current_user.try(:admin?) 
-      flash[:success] = "Can assign roles"
+     if can? :manage, :all
+
      else
       redirect_to root_path
      end
