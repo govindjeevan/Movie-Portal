@@ -29,7 +29,9 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities'
     #
-    if user.role == 'admin'
+    if user.nil?
+      can :read, :all
+    elsif user.role == 'admin'
       can :manage, :all
     elsif user.role == 'manager'
       can :read, Movie
