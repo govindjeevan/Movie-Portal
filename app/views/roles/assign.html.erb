@@ -1,6 +1,6 @@
 
 
-
+<% if current_user.try(:admin?) %>
 <p id="notice"><%= notice %></p>
 
 <h2 id="title">Assign Role for: <%= @user.email %></h2>
@@ -13,5 +13,5 @@
   <% end %>
 
 </div>
-
+<% end %>
 

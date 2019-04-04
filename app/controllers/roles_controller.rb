@@ -1,6 +1,7 @@
 class RolesController < ApplicationController
 
   before_action :set_user, only: [:assign]
+  before_action :check_admin
   def users
     @users = User.all
   end
@@ -24,4 +25,11 @@ class RolesController < ApplicationController
     params.require(:user).permit(:role)
   end
 
+  def check_admin
+     if current_user.try(:admin?) 
+      flash[:success] = "Can assign roles"
+     else
+      redirect_to root_path
+     end
+  end
 end
