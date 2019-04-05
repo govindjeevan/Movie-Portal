@@ -1,5 +1,6 @@
 class TheatresController < ApplicationController
   before_action :set_theatre, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /theatres
   # GET /theatres.json
@@ -27,9 +28,7 @@ class TheatresController < ApplicationController
   def create
     @theatre = Theatre.new(theatre_params)
     @theatre.manager_id = params[:manager_id]
-    @theatre_manager = User.where(:id=>@theatre.manager_id).first;
-    @theatre_manager.manager=1;
-    @theatre_manager.save
+    @theatre.save
     respond_to do |format|
       if @theatre.save
         format.html { redirect_to @theatre, notice: 'Theatre was successfully created.' }

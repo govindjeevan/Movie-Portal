@@ -29,23 +29,41 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities'
     #
-    if user.nil?
-      can :read, :all
-    elsif user.role == 'admin'
-      can :manage, :all
-    elsif user.role == 'manager'
-      can :read, Movie
-      can :home, Movie
-      can :update, Theatre
-      can :manage, Show
-    elsif user.role == 'producer'
-      can :manage, Movie
-    elsif user.role == 'customer'
-      can :read, Movie
+
+
+
+    if user.role.nil?
+      can :read, :all #for guest without roles
+    end
+
+    if user.role ==  "customer"
       can :home, Movie
       can :manage, Booking
-    else
       can :read, :all
     end
+
+
+    if user.role ==  "producer"
+      can :home, Movie
+      can :manage, Booking
+      can :read, :all
+      can :manage, Movie
+    end
+
+
+    if user.role ==  "manager"
+      can :home, Movie
+      can :manage, Booking
+      can :read, :all
+      can :update, Theatre
+      can :manage, Show
+    end
+
+    if user.role ==  "admin"
+      can :manage, :all
+    end
+
+
+
   end
 end
