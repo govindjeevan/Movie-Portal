@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_03_31_065340) do
 
-  create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -24,37 +24,20 @@ ActiveRecord::Schema.define(version: 2019_03_31_065340) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "assignments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.integer "role_id"
-    t.boolean "active"
-  end
-
-  create_table "bookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "bookings", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "movie_id"
     t.integer "theatre_id"
     t.integer "user_id"
     t.integer "show_id"
+    t.integer "seats"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "movie_name"
     t.string "theatre_name"
     t.datetime "start_time"
-    t.integer "seats"
   end
 
-  create_table "designation_mappings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.boolean "active"
-    t.text "roles"
-    t.string "name"
-  end
-
-  create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.string "movie_length"
@@ -67,11 +50,10 @@ ActiveRecord::Schema.define(version: 2019_03_31_065340) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-    t.string "cover_image"
     t.string "genre"
   end
 
-  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "rating"
     t.text "comment"
     t.datetime "created_at", null: false
@@ -80,7 +62,7 @@ ActiveRecord::Schema.define(version: 2019_03_31_065340) do
     t.integer "movie_id"
   end
 
-  create_table "seats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "seats", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "show_id"
     t.integer "booking_id"
     t.integer "seat_id"
@@ -88,7 +70,7 @@ ActiveRecord::Schema.define(version: 2019_03_31_065340) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "shows", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "shows", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.datetime "start"
     t.datetime "end"
     t.datetime "created_at", null: false
@@ -101,7 +83,7 @@ ActiveRecord::Schema.define(version: 2019_03_31_065340) do
     t.integer "left"
   end
 
-  create_table "theatres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "theatres", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name"
     t.integer "capacity"
     t.text "address"
@@ -110,7 +92,7 @@ ActiveRecord::Schema.define(version: 2019_03_31_065340) do
     t.integer "manager_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -120,7 +102,6 @@ ActiveRecord::Schema.define(version: 2019_03_31_065340) do
     t.datetime "updated_at", null: false
     t.boolean "admin"
     t.boolean "manager"
-    t.integer "roles_mask"
     t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

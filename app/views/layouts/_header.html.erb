@@ -3,10 +3,13 @@
     <div class="navbar-header">
       <a class="navbar-brand text-hide" href="#">Movie Portal</a>
     </div>
-
+    <% if current_user %>
     <div class="navbar-header pull-right">
+    <% if current_user.role %>
       <h4 style="color: white"><b><%= current_user.email %> </b>| <%= current_user.role.capitalize! %></h4>
     </div>
+    <% end %>
+    <% end %>
   </div>
 </nav>
 

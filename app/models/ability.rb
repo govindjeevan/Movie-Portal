@@ -34,16 +34,25 @@ class Ability
 
     if user.role.nil?
       can :read, :all #for guest without roles
+      can :home, Movie
     end
 
     if user.role ==  "customer"
       can :home, Movie
       can :manage, Booking
+      cannot :destroy, Booking
       can :read, :all
     end
 
 
     if user.role ==  "producer"
+      can :home, Movie
+      can :manage, Booking
+      can :read, :all
+      can :manage, Movie
+    end
+
+    if user.role ==  "gold_customer"
       can :home, Movie
       can :manage, Booking
       can :read, :all

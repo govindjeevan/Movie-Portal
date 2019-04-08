@@ -25,7 +25,7 @@
         <td><%= theatre.name %></td>
         <td><%= theatre.capacity %></td>
         <td><%= theatre.address %></td>
-        <td><%= manager %>        </td>
+        <td><%= manager[0].email %>        </td>
         <% if  can? :update, Theatre  %>
           <td><%= link_to 'Show', theatre, :class => "btn btn-primary" %>
           <%= link_to 'Edit', edit_theatre_path(theatre), :class => "btn btn-primary" %>
