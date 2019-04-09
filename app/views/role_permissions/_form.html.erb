@@ -1,0 +1,19 @@
+<div class="col-md-10 col-lg-10">
+
+  <%= bootstrap_form_with(model: role_permission, local: true) do |form| %>
+  <% if role_permission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(role_permission.errors.count, "error") %> prohibited this role_permission from being saved:</h2>
+
+      <ul>
+      <% role_permission.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= form.select :role_id ,  options_for_select(@roles.order(:name).map {|x| [x.name, x.id]}), prompt: "Select Role"%>
+    <%= form.select :permission_id, options_for_select(@permissions.order(:description).map {|x| [x.description, x.id]}),  prompt: "Select Permission" %>
+    <%= form.submit "Save", :class => "btn btn-success btn-lg" %>
+<% end %>
+</div>

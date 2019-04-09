@@ -1,0 +1,24 @@
+<h1>Editing Role Permission</h1>
+
+<hr>
+<% role= @roles.select{ |m| m.id == @role_permission.role_id  }.first %>
+<% permission= @permissions.select{ |m| m.id == @role_permission.permission_id}.first %>
+
+<h4><%= role.name.capitalize %> |   <%= permission.description %> [ <%= permission.actions %> in <%= permission.subject_class %> ]
+</h4>
+
+</h4>
+
+
+<hr>
+<%= render 'form', role_permission: @role_permission %>
+<br>
+<br><br>
+<br>
+
+<div class="col-md-10 col-lg-10">
+  <br><br>
+
+<%= link_to 'Show', @role_permission, :class => "btn btn-primary" %>
+<%= link_to 'Back', role_permissions_path , :class => "btn btn-info"%>
+</div>

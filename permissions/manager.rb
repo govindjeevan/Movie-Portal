@@ -1,0 +1,1 @@
+can :manage, Movie
