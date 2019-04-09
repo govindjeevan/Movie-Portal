@@ -55,6 +55,7 @@ class Ability
     if user.role ==  "gold_customer"
       can :home, Movie
       can :manage, Booking
+      can :destroy, Booking
       can :read, :all
       can :manage, Movie
     end

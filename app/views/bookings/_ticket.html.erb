@@ -147,11 +147,14 @@ font-size: 11px;
             <%end%>
               </span>
         </div><!--seat-->
-
+        
+        <% if can? :destroy, Booking %>
         <div class="info-section">
           <label></label>
           <span><%= link_to 'x', ticket, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-danger" %></span>
-        </div><!--row-->
+        </div>
+        <% end %>
+        <!--row-->
 
 
       </div>
