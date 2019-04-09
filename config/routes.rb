@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :roles
+  resources :role_permissions
+  resources :permissions
   resources :bookings
   resources :shows do
     resources :bookings
@@ -12,11 +15,12 @@ Rails.application.routes.draw do
     resources :reviews, except: [:show, :index]
   end
 
-  get '/roles', to: 'roles#users'
+  get '/rbac', to: 'roles#management'
+  get '/assign', to: 'assign#users'
 
-  get '/roles/assign/:user_id', to: 'roles#assign'
+  get '/assign/:user_id', to: 'assign#assign'
 
-  post '/roles/assign/:user_id', to: 'roles#assign'
+  post '/assign/:user_id', to: 'assign#assign'
 
   root to: "movies#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
