@@ -6,7 +6,7 @@
 <hr>
 <div class="container" style="width: 90%; margin-left: 0">
   <%= bootstrap_form_for @user, :url => {:controller => "assign", :action => "assign"}, :method => :POST, :class=>"form-control"  do |f| %>
-    <%= f.select :role, options_for_select([ "admin", "producer", "manager","customer" ], @user.role ), :class=>"form-control" %>
+    <%= f.select :role,  options_for_select(Role.all.pluck(:name),@user.role), :class=>"form-control" %>
     <%= f.submit "Assign", :class=>"btn btn-primary"%>
   <% end %>
 
